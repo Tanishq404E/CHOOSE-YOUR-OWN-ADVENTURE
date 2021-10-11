@@ -1,10 +1,10 @@
 # CHOOSE-YOUR-OWN-ADVENTURE
 This is text based adventure game
 # CONTRIBUTORS
-Aditya binukumar
-Srishti Sharma
-Shiva Tripathi
-Tanishq Tanwar
+1. Aditya binukumar
+2. Srishti Sharma
+3. Shiva Tripathi
+4. Tanishq Tanwar
 # ABOUT
 Theme: Horror
 Objective: Reach the bathroom, and return back
