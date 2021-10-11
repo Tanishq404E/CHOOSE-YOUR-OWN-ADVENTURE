@@ -16,7 +16,7 @@ def display():
     PP           LLLLLLLLL       A         A                 YY            EEE          RR    RR
     PP           LLLLLLLLL      A           A                YY            EEEEEEEEE    RR      RR
     """)
-    print()
+    print("welcome to CHOOSE YOUR OWN ADVENTURE")
     print("""    You wake up in the middle of the night to a deafening thunderclap and you are feeling thirsty, 
     but you soon realize that not everything is as it seems in the house tonight.
     Where has everyone gone? Your family is missing and strange things are lurking in the shadows.""")
