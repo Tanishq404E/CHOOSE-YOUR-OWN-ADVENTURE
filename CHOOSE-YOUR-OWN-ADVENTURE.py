@@ -1,4 +1,6 @@
+#This line defines the opening screen display for the game.
 def display():
+    #The following two print commands will display the "HELLO PLAYER" message at the opening screen.
     print("""
     HHHH    HHHH     EEEEEEEEE       LLL       LLL         OOOOOOOOOOOO
     HHHH    HHHH     EEEE            LLL       LLL         OOO      OOO
@@ -16,13 +18,17 @@ def display():
     PP           LLLLLLLLL       A         A                 YY            EEE          RR    RR
     PP           LLLLLLLLL      A           A                YY            EEEEEEEEE    RR      RR
     """)
+    #The following print commands will displaying the Intro message of the game.
     print("welcome to CHOOSE YOUR OWN ADVENTURE")
     print("""    You wake up in the middle of the night to a deafening thunderclap and you are feeling thirsty, 
     but you soon realize that not everything is as it seems in the house tonight.
     Where has everyone gone? Your family is missing and strange things are lurking in the shadows.""")
     print("“It looks different in the dark.”")
+#Upon starting the game, the display function will display the start of the main storyline.
 display()
+#This line defines what has to be mentioned in the main story.
 def main_story():
+    #The following print command is reponsible for display the story upto the first ingame choice.
     print("""     You wake up startled as a deafening thunderclap roars over you.
         Your heart is racing but you lie frozen in the bed. Confused and disoriented.
         Where are you? What’s going on? You call out for your parents, 
@@ -37,7 +43,9 @@ def main_story():
         shapes: a chair here,  the toy chest there, the corkboard on the wall where you hang all the pictures.
         You can see a bed, a dresser, a chair and a digital clock.
     """)
+    #The following line instructs the player on how to input their choices.
     print("you have Choices, write in the same manner to avoid confusion")
+    #The following lines define choice 1, what inputs should be entered, and also the story that follows each choice. If the choice entered by the player isn't valid, it will be displayed as such.
     ch1=input("choose : GO DOWNSTAIRS TO GET WATER OR WAIT\n")
     if ch1.upper()=="GO DOWNSTAIRS TO GET WATER":
         print("""
@@ -58,6 +66,7 @@ def main_story():
     else:
         print("enter valid choice")
         main_story()
+#The following lines define choice 2, what inputs should be entered, and also the story that follows each choice. If the choice entered by the player isn't valid, it will be displayed as such.
 def level2():
     print("you have Choices")
     choice=input("CHOICE  : stay where you are or move forward.\n")
@@ -81,6 +90,7 @@ def level2():
     else:
         print("enter valid choice")
         level2()
+#The following lines define choice 3, what inputs should be entered, and also the story that follows each choice. If the choice entered by the player isn't valid, it will be displayed as such.
 def level3():
     print("you have Choices")
     choice=input("CHOICE : STAY WHERE YOU ARE OR RUN.\n")
@@ -106,7 +116,8 @@ def level3():
     else:
         print("enter valid choice")
         level3()
-    
+
+#The following lines define choice 4, what inputs should be entered, and also the story that follows each choice. If the choice entered by the player isn't valid, it will be displayed as such.    
 def level4():
     print("you have Choices")
     choice=input("CHOICE : Turn back or Fight the Urge \n")
@@ -129,6 +140,7 @@ def level4():
     else:
         print("enter valid choice")
         level4()
+#The following lines define choice 5, what inputs should be entered, and also the story that follows each choice. If the choice entered by the player isn't valid, it will be displayed as such.
 def boss_level():
     print("you have Choices")
     choice=input("CHOICE : Enter the Store room AND Continue running \n")
@@ -156,6 +168,7 @@ def boss_level():
     else:
         print("enter valid choice")
         boss_level()
+#The following lines define the sub-choice for choice 5, what inputs should be entered, and also the story that follows each choice. If the choice entered by the player isn't valid, it will be displayed as such.
 def choice_5_sub():
     print("OPTION")
     print("OPTION 1: Climb into the vents")
@@ -180,6 +193,7 @@ def choice_5_sub():
     else:
         print("enter valid choice")
         choice_5_sub()
+#The following lines define the fight scene. The bossfight starts here. The rules for the bossfight will be displayed to the player.
 def fight_SCENE():
     print("BOSSFIGHT SEGMENT:")
     print("""The creature and the player have 100 HP each, and the player has 100 SP (stamina points). 
@@ -190,10 +204,12 @@ def fight_SCENE():
           If the player blocks and counter attacks, the player loses 5 HP. If the player attacks, 
           the player loses 20 HP.
           """)
+    #The base values of the variables used in the boss fight are assigned in the following lines.
     P_hp=[100]
     Boss_HP=[100]
     block_count=0
     attack=0
+    #The starting text for the bossfight will be displayed to the player via the following print commands.
     print("Fight moves")
     print("HP STANDS FOR HIT-POINT/HEALTH")
     print("Note:using attack continuously will decrease dmg to 15 ")
@@ -201,10 +217,13 @@ def fight_SCENE():
     print("Note: you can block 3 times")
     print("2. Block and counter attack (-10 HP for boss)")
     print("3. Block (-0 HP for boss)")
+    #The following lines are reponsible for displaying the player and boss HP. They only work when either the player or the boss has more than 0 HP.
     while P_hp[0]>0 or Boss_HP[0]>0:
         print("player_hp"+str(P_hp))
         print("boss_hp"+str(Boss_HP))
+        #The following line defines how the choices are to be entered.
         choice=int(input("enter your choice as '1'or'2'or'3': "))
+        #The following lines define the attack choice for the bossfight. It also defines the reduction in damage dealt per use of the attack choice.
         if choice==1:
             if attack<2:
                 print("you attacked the creature")
@@ -222,6 +241,7 @@ def fight_SCENE():
                 print("player_hp"+str(P_hp))
                 print("boss_hp"+str(Boss_HP))
                 attack+=1
+        #The following lines define the block and counter-attack choice for the bossfight. It also defines the conditions required to perform this move.
         elif choice==2:
             if block_count<3 or block_count!=3:
                 print("creature used attack")
@@ -238,6 +258,7 @@ def fight_SCENE():
                 P_hp[0]=P_hp[0]-15
                 print("Player"+str(P_hp))
                 attack=0
+        #The following lines define the block and counter-attack choice for the bossfight. It also defines the conditions required to perform this move.
         elif choice==3:
             if block_count<3 or block_count!=3:
                 print("creature used attack")
@@ -254,6 +275,7 @@ def fight_SCENE():
                 P_hp[0]=P_hp[0]-15
                 print("Player"+str(P_hp))
                 attack=0
+        #The following lines come into play is a valid choice has not been entered. 
         else:
             print("do the needy and choose wisely")
             print('thats not a valid move')
@@ -261,12 +283,14 @@ def fight_SCENE():
             P_hp[0]=P_hp[0]-15
             print("Player"+str(P_hp))
             attack=0
+        #The following lines are define what will happen when either the player's health or the boss's health reaches 0.
         if Boss_HP[0]<=0:
             break
         elif P_hp[0]<=0:
             break
     print("player_hp"+str(P_hp))
     print("boss_hp"+str(Boss_HP))
+    #If the boss's health reaches 0, the following lines are triggered.
     if P_hp[0]>0 and Boss_HP[0]<=0:
         print("""You manage to weaken the beast, it's shrieks of pain echoing through the hallway, but as 
         you are about to leave, you creature gets back up, staring at you, with a wide, malicious grin. 
@@ -284,6 +308,7 @@ def fight_SCENE():
                 """)
         print("“Is it over though?”")
         print("-To Be Continued")
+    #If the boss's health reaches 0, the following lines are triggered. This will trigger a GAME OVER message, and will subsequently restart the bossfight.
     elif P_hp[0]==0:
         print('''You tried…  you tried to fight…  you never wanted to be its next meal, and like a 
                  cornered badger, you gave it your all, but sadly for you, the creature was just too strong, 
